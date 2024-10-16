@@ -1,12 +1,16 @@
 package ei.shendelev.mainGame.game.model;
 
-import ei.shendelev.mainGame.tour.model.Tour;
-import ei.shendelev.mainGame.comand.model.Comand;
+import ei.shendelev.mainGame.team.model.Team;
+import ei.shendelev.mainGame.user.model.User;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 public class Game {
     private Integer id;
-    private List<Comand> comandList;
-    private List<Tour> tourList;
+    private User moderator;
+    private Integer teamCount;
+    private Integer tourCount;
+    private List<Team> teamList;
 }
