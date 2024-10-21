@@ -1,9 +1,15 @@
 package ei.shendelev.all_as_one.user.model;
 
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "users")
 public class User {
     private Long id;
     private String name;
