@@ -9,5 +9,5 @@ public class AllAsOneApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AllAsOneApplication.class, args);
 	}
-
+			
 }
