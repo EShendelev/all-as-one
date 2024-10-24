@@ -16,6 +16,4 @@ public class UserDto {
     private String name;
 
     private String surname;
-
-    private Float winrate;
 }

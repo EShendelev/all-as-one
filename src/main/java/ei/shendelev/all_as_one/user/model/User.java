@@ -7,6 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")
@@ -26,12 +27,6 @@ public class User {
     @Email(message = "Email must have the form: example@example.domen")
     private String email;
 
-    @Column(name = "games_count")
-    private Integer gamesCount;
-
-    @Column(name = "winrate")
-    private Double winrate;
-
     @Override
     public String toString() {
         return "User{" +
@@ -39,8 +34,6 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
-                ", gamesCount=" + gamesCount +
-                ", winrate=" + winrate +
                 '}';
     }
 }

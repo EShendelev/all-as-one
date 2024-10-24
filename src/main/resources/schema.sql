@@ -3,6 +3,4 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(100) NOT NULL,
     surname VARCHAR(100) NOT NULL,
     email VARCHAR(250) NOT NULL
-    games_count INTEGER DEFAULT 0,
-    winrate NUMERIC DEFAULT 0.0
-)
+);
