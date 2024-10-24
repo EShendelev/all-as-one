@@ -3,7 +3,6 @@ package ei.shendelev.all_as_one.user.controller;
 import ei.shendelev.all_as_one.user.dto.UserDto;
 import ei.shendelev.all_as_one.user.dto.UserDtoReceived;
 import ei.shendelev.all_as_one.user.mapper.UserMapper;
-import ei.shendelev.all_as_one.user.model.User;
 import ei.shendelev.all_as_one.user.service.UserService;
 import ei.shendelev.all_as_one.util.validator.Validator;
 import lombok.RequiredArgsConstructor;
