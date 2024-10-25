@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.exception;
+package ei.shendelev.allAsOne.exception;
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String message) {

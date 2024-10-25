@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.util;
+package ei.shendelev.allAsOne.util;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;

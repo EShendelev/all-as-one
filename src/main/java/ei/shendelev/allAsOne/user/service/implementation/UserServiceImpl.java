@@ -1,13 +1,13 @@
-package ei.shendelev.all_as_one.user.service.implementation;
+package ei.shendelev.allAsOne.user.service.implementation;
 
-import ei.shendelev.all_as_one.exception.NotFoundException;
-import ei.shendelev.all_as_one.exception.NotUniqueException;
-import ei.shendelev.all_as_one.user.dto.UserDto;
-import ei.shendelev.all_as_one.user.mapper.UserMapper;
-import ei.shendelev.all_as_one.user.model.User;
-import ei.shendelev.all_as_one.user.repository.UserRepository;
-import ei.shendelev.all_as_one.user.service.UserService;
-import ei.shendelev.all_as_one.util.Util;
+import ei.shendelev.allAsOne.exception.NotFoundException;
+import ei.shendelev.allAsOne.exception.NotUniqueException;
+import ei.shendelev.allAsOne.user.dto.UserDto;
+import ei.shendelev.allAsOne.user.mapper.UserMapper;
+import ei.shendelev.allAsOne.user.model.User;
+import ei.shendelev.allAsOne.user.repository.UserRepository;
+import ei.shendelev.allAsOne.user.service.UserService;
+import ei.shendelev.allAsOne.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;

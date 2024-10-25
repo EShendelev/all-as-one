@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.util.validator;
+package ei.shendelev.allAsOne.util.validator;
 
 public interface Validator {
     interface Create{}

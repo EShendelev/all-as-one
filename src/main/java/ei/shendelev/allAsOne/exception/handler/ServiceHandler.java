@@ -1,7 +1,7 @@
-package ei.shendelev.all_as_one.exception.handler;
+package ei.shendelev.allAsOne.exception.handler;
 
-import ei.shendelev.all_as_one.exception.NotFoundException;
-import ei.shendelev.all_as_one.exception.NotUniqueException;
+import ei.shendelev.allAsOne.exception.NotFoundException;
+import ei.shendelev.allAsOne.exception.NotUniqueException;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.BadRequestException;

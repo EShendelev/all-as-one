@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.user.dto;
+package ei.shendelev.allAsOne.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

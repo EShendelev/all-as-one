@@ -1,6 +1,6 @@
-package ei.shendelev.all_as_one.user.dto;
+package ei.shendelev.allAsOne.user.dto;
 
-import ei.shendelev.all_as_one.util.validator.Validator;
+import ei.shendelev.allAsOne.util.validator.Validator;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

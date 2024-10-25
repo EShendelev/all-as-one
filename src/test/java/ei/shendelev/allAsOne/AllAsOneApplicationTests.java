@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one;
+package ei.shendelev.allAsOne;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

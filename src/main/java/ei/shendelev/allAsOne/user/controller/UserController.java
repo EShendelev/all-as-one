@@ -1,10 +1,10 @@
-package ei.shendelev.all_as_one.user.controller;
+package ei.shendelev.allAsOne.user.controller;
 
-import ei.shendelev.all_as_one.user.dto.UserDto;
-import ei.shendelev.all_as_one.user.dto.UserDtoReceived;
-import ei.shendelev.all_as_one.user.mapper.UserMapper;
-import ei.shendelev.all_as_one.user.service.UserService;
-import ei.shendelev.all_as_one.util.validator.Validator;
+import ei.shendelev.allAsOne.user.dto.UserDto;
+import ei.shendelev.allAsOne.user.dto.UserDtoReceived;
+import ei.shendelev.allAsOne.user.mapper.UserMapper;
+import ei.shendelev.allAsOne.user.service.UserService;
+import ei.shendelev.allAsOne.util.validator.Validator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

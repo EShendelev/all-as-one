@@ -1,7 +1,7 @@
-package ei.shendelev.all_as_one.user.service;
+package ei.shendelev.allAsOne.user.service;
 
-import ei.shendelev.all_as_one.user.dto.UserDto;
-import ei.shendelev.all_as_one.user.model.User;
+import ei.shendelev.allAsOne.user.dto.UserDto;
+import ei.shendelev.allAsOne.user.model.User;
 
 import java.util.List;
 

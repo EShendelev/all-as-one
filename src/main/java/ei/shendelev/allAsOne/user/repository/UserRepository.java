@@ -1,6 +1,6 @@
-package ei.shendelev.all_as_one.user.repository;
+package ei.shendelev.allAsOne.user.repository;
 
-import ei.shendelev.all_as_one.user.model.User;
+import ei.shendelev.allAsOne.user.model.User;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

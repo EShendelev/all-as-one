@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.user.model;
+package ei.shendelev.allAsOne.user.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

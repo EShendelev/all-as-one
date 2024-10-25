@@ -1,8 +1,8 @@
-package ei.shendelev.all_as_one.user.mapper;
+package ei.shendelev.allAsOne.user.mapper;
 
-import ei.shendelev.all_as_one.user.dto.UserDto;
-import ei.shendelev.all_as_one.user.dto.UserDtoReceived;
-import ei.shendelev.all_as_one.user.model.User;
+import ei.shendelev.allAsOne.user.dto.UserDto;
+import ei.shendelev.allAsOne.user.dto.UserDtoReceived;
+import ei.shendelev.allAsOne.user.model.User;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

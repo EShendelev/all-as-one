@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one;
+package ei.shendelev.allAsOne;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

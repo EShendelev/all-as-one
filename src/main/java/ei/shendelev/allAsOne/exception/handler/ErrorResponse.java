@@ -1,4 +1,4 @@
-package ei.shendelev.all_as_one.exception.handler;
+package ei.shendelev.allAsOne.exception.handler;
 
 import lombok.Data;
 
