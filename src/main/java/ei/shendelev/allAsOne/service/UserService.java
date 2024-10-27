@@ -1,7 +1,7 @@
-package ei.shendelev.allAsOne.user.service;
+package ei.shendelev.allAsOne.service;
 
-import ei.shendelev.allAsOne.user.dto.UserDto;
-import ei.shendelev.allAsOne.user.model.User;
+import ei.shendelev.allAsOne.dto.UserDto;
+import ei.shendelev.allAsOne.model.User;
 
 import java.util.List;
 
@@ -11,4 +11,6 @@ public interface UserService {
     void deleteUser(Long id);
 
     List<User> showUsers(List<Long> idList, int from, int size);
+
+    UserDto showUser(Long id);
 }

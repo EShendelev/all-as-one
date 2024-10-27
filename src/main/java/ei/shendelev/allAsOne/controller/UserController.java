@@ -1,9 +1,10 @@
-package ei.shendelev.allAsOne.user.controller;
+package ei.shendelev.allAsOne.controller;
 
-import ei.shendelev.allAsOne.user.dto.UserDto;
-import ei.shendelev.allAsOne.user.dto.UserDtoReceived;
-import ei.shendelev.allAsOne.user.mapper.UserMapper;
-import ei.shendelev.allAsOne.user.service.UserService;
+import ei.shendelev.allAsOne.dto.UserDto;
+import ei.shendelev.allAsOne.dto.UserDtoReceived;
+import ei.shendelev.allAsOne.mapper.UserMapper;
+import ei.shendelev.allAsOne.model.User;
+import ei.shendelev.allAsOne.service.UserService;
 import ei.shendelev.allAsOne.util.validator.Validator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,5 +27,12 @@ public class UserController {
                                               UserDtoReceived userDto) {
         log.info("POST request to /users");
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(UserMapper.toUser(userDto)));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDto> showUser(@PathVariable Long id) {
+        log.info("GET request to /users/id, id = {}", id);
+        UserDto user = UserMapper.toUser(userService.showUser(id));
+        return ResponseEntity.ok(user);
     }
 }

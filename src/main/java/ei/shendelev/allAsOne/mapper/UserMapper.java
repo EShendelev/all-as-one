@@ -1,8 +1,8 @@
-package ei.shendelev.allAsOne.user.mapper;
+package ei.shendelev.allAsOne.mapper;
 
-import ei.shendelev.allAsOne.user.dto.UserDto;
-import ei.shendelev.allAsOne.user.dto.UserDtoReceived;
-import ei.shendelev.allAsOne.user.model.User;
+import ei.shendelev.allAsOne.dto.UserDto;
+import ei.shendelev.allAsOne.dto.UserDtoReceived;
+import ei.shendelev.allAsOne.model.User;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -18,7 +18,6 @@ public class UserMapper {
 
     public static User toUser(UserDtoReceived userDto) {
         return User.builder()
-                .id(userDto.getId())
                 .email(userDto.getEmail())
                 .name(userDto.getName())
                 .surname(userDto.getSurname())

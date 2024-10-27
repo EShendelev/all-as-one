@@ -1,4 +1,4 @@
-package ei.shendelev.allAsOne.user.dto;
+package ei.shendelev.allAsOne.dto;
 
 import ei.shendelev.allAsOne.util.validator.Validator;
 import jakarta.validation.constraints.Email;
@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDtoReceived {
-    private Long id;
 
     @Email(groups = {Validator.Create.class})
     @Size(min = 6, max = 250, groups = {Validator.Create.class})

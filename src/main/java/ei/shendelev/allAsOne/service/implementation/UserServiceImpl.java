@@ -1,12 +1,12 @@
-package ei.shendelev.allAsOne.user.service.implementation;
+package ei.shendelev.allAsOne.service.implementation;
 
 import ei.shendelev.allAsOne.exception.NotFoundException;
 import ei.shendelev.allAsOne.exception.NotUniqueException;
-import ei.shendelev.allAsOne.user.dto.UserDto;
-import ei.shendelev.allAsOne.user.mapper.UserMapper;
-import ei.shendelev.allAsOne.user.model.User;
-import ei.shendelev.allAsOne.user.repository.UserRepository;
-import ei.shendelev.allAsOne.user.service.UserService;
+import ei.shendelev.allAsOne.dto.UserDto;
+import ei.shendelev.allAsOne.mapper.UserMapper;
+import ei.shendelev.allAsOne.model.User;
+import ei.shendelev.allAsOne.repository.UserRepository;
+import ei.shendelev.allAsOne.service.UserService;
 import ei.shendelev.allAsOne.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -65,5 +65,17 @@ public class UserServiceImpl implements UserService {
         }
         log.info("User service: show list of users, size = {}", users.size());
         return users;
+    }
+
+    @Override
+    public UserDto showUser(Long id) {
+        log.info("User service: invoke show user by id");
+        if(!userRepository.existsById(id)) {
+            log.error("User with id {} not exist", id);
+            throw new NotFoundException("User id " + id + " not found");
+        }
+        log.info("User id {} showed", id);
+        UserDto userDto = UserMapper.toUserDto(userRepository.getById(id));
+        return userDto;
     }
 }
