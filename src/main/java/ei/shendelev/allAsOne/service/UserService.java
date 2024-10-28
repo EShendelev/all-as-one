@@ -10,7 +10,7 @@ public interface UserService {
 
     void deleteUser(Long id);
 
-    List<User> showUsers(List<Long> idList, int from, int size);
+    List<UserDto> showUsers(List<Long> idList, int from, int size);
 
     UserDto showUser(Long id);
 }

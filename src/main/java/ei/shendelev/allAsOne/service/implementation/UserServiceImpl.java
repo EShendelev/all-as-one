@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -51,20 +52,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> showUsers(List<Long> idList, int from, int size) {
+    public List<UserDto> showUsers(List<Long> idList, int from, int size) {
         log.info("User service: invoke show users");
         Pageable pageable = Util.createPageRequestAsc(from, size);
         if (idList.isEmpty()) {
             List<User> allUsers = userRepository.findAllUser(pageable);
             log.info("User service: idList is empty, return all users, size = {}", allUsers.size());
-            return allUsers;
+            return allUsers.stream().map(UserMapper::toUserDto).toList();
         }
         List<User> users = userRepository.findAllByIds(idList, pageable);
         if(users.isEmpty()) {
             return List.of();
         }
         log.info("User service: show list of users, size = {}", users.size());
-        return users;
+        return users.stream().map(UserMapper::toUserDto).toList();
     }
 
     @Override
@@ -75,7 +76,7 @@ public class UserServiceImpl implements UserService {
             throw new NotFoundException("User id " + id + " not found");
         }
         log.info("User id {} showed", id);
-        UserDto userDto = UserMapper.toUserDto(userRepository.getById(id));
+        UserDto userDto = UserMapper.toUserDto(userRepository.findById(id).orElseThrow());
         return userDto;
     }
 }
