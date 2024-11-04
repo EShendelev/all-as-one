@@ -1,22 +1,23 @@
 package ei.shendelev.allAsOne.dto;
 
-import ei.shendelev.allAsOne.model.Team;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class TeamDto {
 
     private Long id;
 
+    @NotBlank
     private String name;
 
-    private String surname;
-
-    private TeamDto teamDto;
+    private List<UserDtoForTeam> userList;
 }

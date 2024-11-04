@@ -28,6 +28,10 @@ public class User {
     @Email(message = "Email must have the form: example@example.domen")
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
+
     @Override
     public String toString() {
         return "User{" +

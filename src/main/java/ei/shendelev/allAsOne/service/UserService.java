@@ -6,11 +6,13 @@ import ei.shendelev.allAsOne.model.User;
 import java.util.List;
 
 public interface UserService {
-    UserDto createUser(User user);
+    UserDto saveUser(User user);
 
     void deleteUser(Long id);
 
-    List<UserDto> showUsers(List<Long> idList, int from, int size);
+    List<UserDto> findUsersByIdList(List<Long> idList, int from, int size);
 
-    UserDto showUser(Long id);
+    UserDto findUser(Long id);
+
+
 }

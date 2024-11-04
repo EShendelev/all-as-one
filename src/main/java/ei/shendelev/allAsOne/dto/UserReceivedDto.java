@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDtoReceived {
+public class UserReceivedDto {
 
     @Email(groups = {Validator.Create.class})
     @Size(min = 6, max = 250, groups = {Validator.Create.class})

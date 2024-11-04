@@ -1,7 +1,7 @@
 package ei.shendelev.allAsOne.controller;
 
 import ei.shendelev.allAsOne.dto.UserDto;
-import ei.shendelev.allAsOne.dto.UserDtoReceived;
+import ei.shendelev.allAsOne.dto.UserReceivedDto;
 import ei.shendelev.allAsOne.mapper.UserMapper;
 import ei.shendelev.allAsOne.service.UserService;
 import ei.shendelev.allAsOne.util.validator.Validator;
@@ -25,26 +25,26 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDto createUser(@RequestBody @Validated({Validator.Create.class})
-                                              UserDtoReceived userDto) {
+    public UserDto saveUser(@RequestBody @Validated({Validator.Create.class})
+                              UserReceivedDto userDto) {
         log.info("POST request to /users");
-        return userService.createUser(UserMapper.toUser(userDto));
+        return userService.saveUser(UserMapper.toUser(userDto));
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<UserDto> showUserList(@RequestParam(defaultValue = "") List<Long> ids,
+    public List<UserDto> findUserList(@RequestParam(defaultValue = "") List<Long> ids,
                                       @RequestParam(defaultValue = "0") @PositiveOrZero int from,
                                       @RequestParam(defaultValue = "10") @Positive int size) {
         log.info("GET request to /users");
-        return userService.showUsers(ids, from, size);
+        return userService.findUsersByIdList(ids, from, size);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public UserDto showUser(@PathVariable Long id) {
+    public UserDto findUser(@PathVariable Long id) {
         log.info("GET request to /users/id, id = {}", id);
-        return userService.showUser(id);
+        return userService.findUser(id);
     }
 
     @DeleteMapping("/{id}")
