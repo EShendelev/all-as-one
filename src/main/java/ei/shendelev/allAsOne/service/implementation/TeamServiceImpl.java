@@ -1,6 +1,7 @@
 package ei.shendelev.allAsOne.service.implementation;
 
 import ei.shendelev.allAsOne.dto.TeamDto;
+import ei.shendelev.allAsOne.dto.TeamUserListDto;
 import ei.shendelev.allAsOne.exception.NotFoundException;
 import ei.shendelev.allAsOne.exception.NotUniqueException;
 import ei.shendelev.allAsOne.mapper.TeamMapper;
@@ -31,23 +32,25 @@ public class TeamServiceImpl implements TeamService {
         if (teamRepository.existsByName(team.getName())) {
             throw new NotUniqueException("Team with name " + team.getName() + " already exist");
         }
-        TeamDto teamDto = TeamMapper.toTeamDto(teamRepository.save(team));
-        log.info("Team service: Team {} created", teamDto);
-        return teamDto;
+
+        log.info("Team service: Team {} created", team);
+        return TeamMapper.toTeamDto(team);
+
     }
 
     @Override
-    public TeamDto addUserToTeam(Long userId) {
+    public TeamUserListDto addUserToTeam(Long userId) {
         return null;
     }
 
+
     private Boolean checkUserIdList(List<Long> userIds) {
         boolean isChecked = true;
-        for (Long i : userIds) {
-            if (!userRepository.existsById(i)) {
+        for (Long id : userIds) {
+            if (!userRepository.existsById(id)) {
                 isChecked = false;
-                log.info("User with id {} not exist", i);
-                throw new NotFoundException("User id " + i + " not found");
+                log.info("User with id {} not exist", id);
+                throw new NotFoundException("User id " + id + " not found");
             }
         }
         return isChecked;

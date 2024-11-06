@@ -5,12 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class UserDtoForTeam {
+public class TeamUserListDto {
     private Long id;
     private String name;
-    private String surname;
+    private List<UserTeamDto> userList;
 }

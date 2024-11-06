@@ -26,4 +26,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findAllUser(Pageable pageable);
 
     Boolean existsByEmail(String email);
+
+    @Query("SELECT u.id " +
+            "FROM User u " +
+            "WHERE u.id IN ?1")
+    List<Long> existsAllUsersId(List<Long> ids);
 }

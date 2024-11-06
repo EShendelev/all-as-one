@@ -21,6 +21,4 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     List<Team> findAllTeam(Pageable pageable);
 
     Boolean existsByName(String name);
-
-
 }

@@ -1,6 +1,7 @@
 package ei.shendelev.allAsOne.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Null;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,5 +20,6 @@ public class TeamDto {
     @NotBlank
     private String name;
 
-    private List<UserDtoForTeam> userList;
+    @NotBlank(message = "Not have user in team")
+    private List<UserDto> userList;
 }
