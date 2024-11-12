@@ -25,12 +25,22 @@ public class UserMapper {
                 .build();
     }
 
+    public User toUser(UserTeamDto userTeamDto) {
+        return User.builder()
+                .id(userTeamDto.getId())
+                .name(userTeamDto.getName())
+                .surname(userTeamDto.getSurname())
+                .email(userTeamDto.getEmail())
+                .team(userTeamDto.getTeam())
+                .build();
+    }
+
     public UserTeamDto toUserTeamDto(User user) {
         return UserTeamDto.builder()
                 .id(user.getId())
                 .name(user.getName())
                 .surname(user.getSurname())
-                .teamId(user.getTeam().getId())
+                .team(user.getTeam())
                 .build();
     }
 }

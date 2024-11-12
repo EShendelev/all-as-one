@@ -22,6 +22,14 @@ public class TeamMapper {
                 .build();
     }
 
+    public Team toTeam(TeamUserListDto teamUserListDto) {
+        return Team.builder()
+                .id(teamUserListDto.getId())
+                .name(teamUserListDto.getName())
+                .users(teamUserListDto.getUserList().stream().map(UserMapper::toUser).toList())
+                .build();
+    }
+
     public TeamUserListDto toTeamUserListDto(Team team) {
         return TeamUserListDto.builder()
                 .id(team.getId())
@@ -29,4 +37,6 @@ public class TeamMapper {
                 .userList(team.getUsers().stream().map(UserMapper::toUserTeamDto).toList())
                 .build();
     }
+
+
 }

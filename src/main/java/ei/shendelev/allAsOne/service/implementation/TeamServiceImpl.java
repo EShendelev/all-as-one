@@ -33,6 +33,7 @@ public class TeamServiceImpl implements TeamService {
             throw new NotUniqueException("Team with name " + team.getName() + " already exist");
         }
 
+
         log.info("Team service: Team {} created", team);
         return TeamMapper.toTeamDto(team);
 

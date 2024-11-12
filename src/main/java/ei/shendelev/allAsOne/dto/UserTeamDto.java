@@ -1,5 +1,6 @@
 package ei.shendelev.allAsOne.dto;
 
+import ei.shendelev.allAsOne.model.Team;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +16,6 @@ public class UserTeamDto {
     private Long id;
     private String name;
     private String surname;
-    private Long teamId;
+    private Team team;
+    private String email;
 }
