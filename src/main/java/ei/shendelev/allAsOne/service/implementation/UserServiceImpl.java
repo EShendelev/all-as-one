@@ -1,5 +1,6 @@
 package ei.shendelev.allAsOne.service.implementation;
 
+import ei.shendelev.allAsOne.dto.UserReceivedDto;
 import ei.shendelev.allAsOne.exception.NotFoundException;
 import ei.shendelev.allAsOne.exception.NotUniqueException;
 import ei.shendelev.allAsOne.dto.UserDto;
@@ -28,15 +29,15 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserDto saveUser(User user) {
+    public UserDto saveUser(UserReceivedDto userDto) {
         log.info("User service: invoke create user");
 
-        if (userRepository.existsByEmail(user.getEmail())) {
-            throw new NotUniqueException("User with email " + user.getEmail() + " already exist");
+        if (userRepository.existsByEmail(userDto.getEmail())) {
+            throw new NotUniqueException("User with email " + userDto.getEmail() + " already exist");
         }
-        UserDto userDto = UserMapper.toUserDto(userRepository.save(user));
+        User user = userRepository.save(UserMapper.toUser(userDto));
         log.info("User service: User created: {}", userDto);
-        return userDto;
+        return UserMapper.toUserDto(user);
     }
 
     @Transactional

@@ -22,7 +22,7 @@ public class Team {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "user_id")
     private List<User> users;
 
     @Override

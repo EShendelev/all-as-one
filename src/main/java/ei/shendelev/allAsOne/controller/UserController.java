@@ -28,7 +28,7 @@ public class UserController {
     public UserDto saveUser(@RequestBody @Validated({Validator.Create.class})
                               UserReceivedDto userDto) {
         log.info("POST request to /users");
-        return userService.saveUser(UserMapper.toUser(userDto));
+        return userService.saveUser(userDto);
     }
 
     @GetMapping
