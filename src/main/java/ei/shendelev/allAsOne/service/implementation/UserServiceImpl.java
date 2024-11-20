@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public UserDto saveUser(UserReceivedDto userDto) {
-        log.info("User service: invoke create user");
+        log.info("User service: invoke saveUser");
 
         if (userRepository.existsByEmail(userDto.getEmail())) {
             throw new NotUniqueException("User with email " + userDto.getEmail() + " already exist");
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public void deleteUser(Long id) {
-        log.info("User service: invoke delete user");
+        log.info("User service: invoke deleteUser");
         if(!userRepository.existsById(id)) {
             log.error("User with id {} not exist", id);
             throw new NotFoundException("User id " + id + " not found");
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> findUsersByIdList(List<Long> idList, int from, int size) {
-        log.info("User service: invoke show users");
+        log.info("User service: invoke findUsersByIdList");
         Pageable pageable = Util.createPageRequestAsc(from, size);
         if (idList.isEmpty()) {
             List<User> allUsers = userRepository.findAllUser(pageable);
@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto findUser(Long id) {
-        log.info("User service: invoke show user by id");
+        log.info("User service: invoke findUser id {}", id);
         if(!userRepository.existsById(id)) {
             log.error("User with id {} not exist", id);
             throw new NotFoundException("User id " + id + " not found");

@@ -16,30 +16,19 @@ public class UserMapper {
                 .build();
     }
 
-    public User toUser(UserReceivedDto userDto) {
+    public User toUser(UserDto userDto) {
         return User.builder()
-                .email(userDto.getEmail())
+                .id(userDto.getId())
                 .name(userDto.getName())
                 .surname(userDto.getSurname())
                 .build();
     }
 
-    public User toUser(UserTeamDto userTeamDto) {
+    public User toUser(UserReceivedDto userDto) {
         return User.builder()
-                .id(userTeamDto.getId())
-                .name(userTeamDto.getName())
-                .surname(userTeamDto.getSurname())
-                .email(userTeamDto.getEmail())
-                .team(userTeamDto.getTeam())
-                .build();
-    }
-
-    public UserTeamDto toUserTeamDto(User user) {
-        return UserTeamDto.builder()
-                .id(user.getId())
-                .name(user.getName())
-                .surname(user.getSurname())
-                .team(user.getTeam())
+                .email(userDto.getEmail())
+                .name(userDto.getName())
+                .surname(userDto.getSurname())
                 .build();
     }
 }

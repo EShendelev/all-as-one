@@ -21,8 +21,7 @@ public class Team {
     @Column(name = "name")
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "team")
     private List<User> users;
 
     @Override
