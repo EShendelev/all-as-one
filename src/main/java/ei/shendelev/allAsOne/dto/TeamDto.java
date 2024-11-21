@@ -15,8 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TeamDto {
-    private Long id;
 
+    private Long id;
     @Size(min = 6, max = 250, groups = {Validator.Create.class})
     @NotBlank(groups = {Validator.Create.class})
     private String name;

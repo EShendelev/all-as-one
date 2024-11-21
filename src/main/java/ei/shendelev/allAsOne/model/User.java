@@ -39,6 +39,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
+                ", team=" + team +
                 '}';
     }
 }
